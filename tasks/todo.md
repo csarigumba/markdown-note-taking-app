@@ -12,51 +12,51 @@ Building a RESTful API service for markdown note management with file upload, HT
 ## TODO List
 
 ### Phase 1: Project Foundation
-- [ ] Initialize Node.js project with package.json
-- [ ] Install core dependencies (express, multer, marked, uuid, dotenv)
-- [ ] Create basic project structure (src/, storage/, .env.example)
-- [ ] Set up basic Express server with health check endpoint
-- [ ] Add environment configuration (.env support)
+- [x] Initialize Node.js project with package.json
+- [x] Install core dependencies (express, multer, marked, uuid, dotenv)
+- [x] Create basic project structure (src/, storage/, .env.example)
+- [x] Set up basic Express server with health check endpoint
+- [x] Add environment configuration (.env support)
 
 ### Phase 2: Storage Layer
-- [ ] Create storage directory structure
-- [ ] Implement simple file-based storage service
-- [ ] Add UUID generation for unique note IDs
-- [ ] Create Note model/interface
-- [ ] Implement basic CRUD operations for notes
+- [x] Create storage directory structure
+- [x] Implement simple file-based storage service
+- [x] Add UUID generation for unique note IDs
+- [x] Create Note model/interface
+- [x] Implement basic CRUD operations for notes
 
 ### Phase 3: Core API Endpoints
-- [ ] Implement POST /notes endpoint (JSON payload only)
-- [ ] Add request validation middleware
-- [ ] Implement GET /notes/:id endpoint
-- [ ] Add error handling middleware
-- [ ] Test basic create and retrieve functionality
+- [x] Implement POST /notes endpoint (JSON payload only)
+- [x] Add request validation middleware
+- [x] Implement GET /notes/:id endpoint
+- [x] Add error handling middleware
+- [x] Test basic create and retrieve functionality
 
 ### Phase 4: File Upload
-- [ ] Configure Multer for file uploads
-- [ ] Update POST /notes to handle file uploads
-- [ ] Add file type validation (.md, .txt only)
-- [ ] Implement file size limits
-- [ ] Test file upload functionality
+- [x] Configure Multer for file uploads
+- [x] Update POST /notes to handle file uploads
+- [x] Add file type validation (.md, .txt only)
+- [x] Implement file size limits
+- [x] Test file upload functionality
 
 ### Phase 5: Markdown Rendering
-- [ ] Install and configure markdown parser (marked)
-- [ ] Implement GET /notes/:id/render endpoint
-- [ ] Add HTML sanitization for security
-- [ ] Test markdown to HTML conversion
+- [x] Install and configure markdown parser (marked)
+- [x] Implement GET /notes/:id/render endpoint
+- [x] Add HTML sanitization for security
+- [x] Test markdown to HTML conversion
 
 ### Phase 6: Grammar Checking
-- [ ] Research and select simple grammar checking library
-- [ ] Implement POST /notes/:id/grammar-check endpoint
-- [ ] Format grammar suggestions response
-- [ ] Test grammar checking functionality
+- [x] Research and select simple grammar checking library
+- [x] Implement POST /notes/:id/grammar-check endpoint
+- [x] Format grammar suggestions response
+- [x] Test grammar checking functionality
 
 ### Phase 7: Polish & Testing
-- [ ] Add comprehensive error handling
-- [ ] Implement request logging
-- [ ] Create basic integration tests
-- [ ] Add API documentation (README)
-- [ ] Performance check (<500ms responses)
+- [x] Add comprehensive error handling
+- [x] Implement request logging
+- [x] Create basic integration tests
+- [x] Add API documentation (README)
+- [x] Performance check (<500ms responses)
 
 ## Notes
 - Using file-based storage for simplicity (no database setup required)
