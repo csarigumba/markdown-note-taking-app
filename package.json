@@ -1,0 +1,35 @@
+{
+  "name": "markdown-note-taking-app",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "jest",
+    "lint": "eslint src/"
+  },
+  "keywords": [
+    "markdown",
+    "notes",
+    "api",
+    "rest"
+  ],
+  "author": "",
+  "license": "ISC",
+  "description": "RESTful API for markdown note management with file upload and rendering capabilities",
+  "dependencies": {
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "marked": "^16.0.0",
+    "morgan": "^1.10.0",
+    "multer": "^2.0.1",
+    "uuid": "^11.1.0",
+    "write-good": "^1.0.8"
+  },
+  "devDependencies": {
+    "eslint": "^9.31.0",
+    "jest": "^30.0.4",
+    "nodemon": "^3.1.10",
+    "supertest": "^7.1.3"
+  }
+}

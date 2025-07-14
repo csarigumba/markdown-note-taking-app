@@ -2,6 +2,7 @@
   - ask claude to create a requirement copy pasting the raw requirements and referencing the sample-requirements.
 2. Based on the requirements, ask Claude code to create CLAUDE.md
   - prompt: prompts/p1.txts
+  - do not forget to copy the standard workflow in the Claude.
 3. proceed on planning
   - change to opus
   - change to planning mode
