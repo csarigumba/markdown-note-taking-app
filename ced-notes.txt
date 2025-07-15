@@ -7,3 +7,5 @@
   - change to opus
   - change to planning mode
   - prompt: prompts/p2.txt
+4. create curl.md to test easily
+  - prompts.txt/p3.txt
