@@ -5,18 +5,22 @@ const { validateNote } = require('../middleware/validation');
 const upload = require('../middleware/upload');
 
 // Create a new note (JSON or file upload)
-router.post('/', (req, res, next) => {
-  // Use multer for multipart/form-data, otherwise continue
-  const contentType = req.get('content-type');
-  if (contentType && contentType.includes('multipart/form-data')) {
-    upload.single('file')(req, res, (err) => {
-      if (err) return next(err);
-      next();
-    });
-  } else {
-    validateNote(req, res, next);
-  }
-}, noteController.createNote);
+router.post(
+  '/',
+  (req, res, next) => {
+    // Use multer for multipart/form-data, otherwise continue
+    const contentType = req.get('content-type');
+    if (contentType && contentType.includes('multipart/form-data')) {
+      upload.single('file')(req, res, err => {
+        if (err) return next(err);
+        next();
+      });
+    } else {
+      validateNote(req, res, next);
+    }
+  },
+  noteController.createNote
+);
 
 // Get all notes
 router.get('/', noteController.getAllNotes);
@@ -29,5 +33,10 @@ router.get('/:id/render', noteController.renderNote);
 
 // Check grammar
 router.post('/:id/grammar-check', noteController.checkGrammar);
+
+// Update a note
+router.put('/:id', validateNote, noteController.updateNote);
+// Delete a note
+router.delete('/:id', noteController.deleteNote);
 
 module.exports = router;

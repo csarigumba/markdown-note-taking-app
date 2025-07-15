@@ -99,10 +99,55 @@ const checkGrammar = async (req, res, next) => {
   }
 };
 
+const updateNote = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const updates = {};
+
+    if (req.body.title !== undefined) {
+      updates.title = req.body.title;
+    }
+    if (req.body.content !== undefined) {
+      updates.content = req.body.content;
+    }
+
+    const updatedNote = await storageService.update(id, updates);
+
+    if (!updatedNote) {
+      return res.status(404).json({
+        error: 'Note not found'
+      });
+    }
+
+    res.json(updatedNote.toJSON());
+  } catch (error) {
+    next(error);
+  }
+};
+
+const deleteNote = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const deleted = await storageService.delete(id);
+
+    if (!deleted) {
+      return res.status(404).json({
+        error: 'Note not found'
+      });
+    }
+
+    res.status(204).send();
+  } catch (error) {
+    next(error);
+  }
+};
+
 module.exports = {
   createNote,
   getNote,
   getAllNotes,
   renderNote,
-  checkGrammar
+  checkGrammar,
+  updateNote,
+  deleteNote
 };
